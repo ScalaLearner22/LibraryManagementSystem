@@ -9,14 +9,14 @@ trait DbConnection {
 
 trait PostgresConnector extends DbConnection {
 
+  //TODO: Need to make Connection String configurable
   def getConnection(): Connection = {
     println("Postgres connector")
     import java.sql.DriverManager
-    val url = "jdbc:postgresql://localhost:5432/Project1_DB"
+    val url = "jdbc:postgresql://localhost:5432/libraryManagement"
     val props = new Properties()
     props.setProperty("user", "postgres")
     props.setProperty("password", "postgres")
-    //props.setProperty("ssl", "true")
     DriverManager.getConnection(url, props)
   }
 
