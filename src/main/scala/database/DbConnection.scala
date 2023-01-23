@@ -9,6 +9,7 @@ trait DbConnection {
 
 trait PostgresConnector extends DbConnection {
 
+  //TODO: Need to make Connection String configurable
   def getConnection(): Connection = {
     println("Postgres connector")
     import java.sql.DriverManager
