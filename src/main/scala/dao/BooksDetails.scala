@@ -13,7 +13,7 @@ class BooksDetails extends PostgresConnector{
   }
 
   def add(stm: Statement, b1: Books): Int = {
-    val sqlInsert = s"INSERT INTO Books (accno, author, title, publication, edition, no_of_copies, volumn, date_pur, price, status) VALUES (${b1.accno},'${b1.author}','${b1.title}','${b1.publication}', '${b1.edition}', ${b1.no_of_copies}, '${b1.volumn}', '${b1.date_pur}', ${b1.price}, '${b1.status}')"
+    val sqlInsert = s"INSERT INTO books_details (accno, author, title, publication, edition, no_of_copies, volumn, date_pur, price, status) VALUES (${b1.accno},'${b1.author}','${b1.title}','${b1.publication}', '${b1.edition}', ${b1.no_of_copies}, '${b1.volumn}', '${b1.date_pur}', ${b1.price}, '${b1.status}')"
     stm.executeUpdate(sqlInsert)
   }
 
